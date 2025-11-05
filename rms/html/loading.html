@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title></title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="">
+  <meta property="og:type" content="website">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/default.css">
+  <link rel="canonical" href="">
+</head>
+<body>
+  <!-- 로딩 -->
+  <div id="loading" class="loading">
+    <i class="loading__icon"></i> 
+    <p class="loading__desc">문서를 찾고 있습니다.</p>
+  </div>
+  <!-- //로딩 -->
+
+  <!-- WRAP -->
+  <div id="wrap">
+    <header id="header">
+      <h1 class="header__logo"><a href="javascript:;"><img src="../assets/img/logo/logo.svg" alt="서울주택도시개발공사"></a></h1>
+    </header>
+
+    <main id="container" class="search">
+      <section class="content">
+        <form class="search__form" id="searchForm" action="">
+          <div class="search__group">
+            <label for="int-search" class="blind">검색어입력</label>
+            <textarea name="search__input" class="int search__input resize" id="int-search" placeholder="찾을 문서의 제목이나 내용을 편하게 입력해주세요."></textarea>
+            <div class="search__buttons">
+              <button type="button" class="search__btn search__btn--delete">
+                <i class="icon">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="8" cy="8" r="8" fill="#1D1D1D"/>
+                    <path d="M11 5L5 11M11 11L5 5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </i>
+                <span class="blind">삭제</span>
+              </button>
+              <button type="button" class="search__btn search__btn--search">
+                <i class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M21.0703 2.92958L10.4063 13.5935M3.271 8.23526L19.8769 2.47403C20.8995 2.11924 21.8807 3.10037 21.5259 4.123L15.7646 20.7289C15.37 21.8665 13.7725 21.8977 13.3337 20.7764L10.6968 14.0376C10.5651 13.7011 10.2988 13.4348 9.96226 13.3031L3.22354 10.6662C2.10219 10.2274 2.13338 8.62994 3.271 8.23526Z" stroke="#8A949E" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </i>
+                <span class="blind">검색</span>
+              </button>
+            </div>
+          </div>
+        </form>
+      </section><!-- //main__content -->
+      <div class="search__bar">
+        <!-- <p class="search__message">RMS 시범 서비스 (답변이 사실이 아닐 수도 있으므로 사용 전 사실 확인을 권장합니다.)</p> -->
+      </div><!-- //search__bar -->
+    </main><!-- //container -->
+  </div>
+  <!-- //wrap -->
+  <script type="text/javascript" src="../assets/js/search.js">/* 검색 영역 */</script>
+</body>
+</html>

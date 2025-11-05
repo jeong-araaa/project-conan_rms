@@ -1,4 +1,4 @@
-# project-conan
+# project-conan_rms
 Conan Chatbot
 > 퍼블리싱 산출물 저장소  
 > Figma 시안을 기반으로 구현된 반응형 웹 퍼블리싱 프로젝트입니다.

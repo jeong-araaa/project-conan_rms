@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>서울주택도시개발공사</title>
+  <link rel="stylesheet" href="./rms/assets/css/font.css">
+  <style>
+    * {margin:0;padding:0;box-sizing:border-box;font-family:"Pretendard", "Malgun Gothic", "AppleSDGothicNeo", "AppleGothic", sans-serif;font-size:14px;line-height:1.5;color:#62697b;letter-spacing:-0.3px;}
+    ul,ol {list-style:none;}
+    table,tr,td,th {border-collapse:collapse;border-spacing:0;}
+    .header {display:flex;align-items:center;position:fixed;left:0;right:0;width:100%;height:100px;max-width:1440px;margin:0 auto;background-color:#fff;z-index:100;}
+    .header > div {position:relative;}
+    .header h1 {width:100%;text-align:center;}
+    .header .link {position:absolute;bottom:5px;right:5%;}
+    .header .link a {font-size:16px;color:#fff;margin-left:10px;}
+    .date {position:absolute;right:0px;bottom:8px;padding:0 5px;font-size:11px;color:#fff;letter-spacing:0.5px;background-color:#5ab430;}
+    .word_list {position:absolute !important;right:20px;bottom:8px;background-color:#fff;display:inline-block;}
+    .word_list p {font-size:11px;}
+    .tableWrap {max-width:1440px;margin:0 auto;padding-top:100px;padding-bottom:50px;}
+    .tableTh {position:fixed;width:100%;max-width:1440px;margin:0 auto;background-color:#fff;z-index:50;}
+    .tableTd {margin-top:32px;}
+    table {width:100%;table-layout:fixed;}
+    tr:hover {background-color:#fdd bba;}
+    th {padding:7px 0;background-color:#2e2624;color:#fff;font-weight:normal;}
+    th span {color:#f2fff9;}
+    td {padding:5px 0;border:1px solid #f5f5f5;text-align:center;color:#999;}
+    td:nth-child(5),
+    td:nth-child(6) {text-align:left;padding:10px;}
+    td a {text-decoration:none;cursor:pointer;}
+    td a:hover {text-decoration:underline;}
+    td p {color:#FF0004;line-height:1.3;}
+    .tr_new {background-color:#d0eaff !important;}
+    .reference {color:#1E1E1E;}
+    .crystal {color:#5ab430;}
+    .new {color:red;}
+    .today {color:#5ab430;}
+    .line_bot th,
+    .line_bot td {border-bottom-color:#ddd;}
+    .depth0 {font-weight:600;font-size:15px;color:#000;text-align:left;background-color:transparent;padding-left:25px;letter-spacing:0;}
+    .depth1 {font-weight:600;color:#000;}
+    td:nth-child(2) {font-weight:400;color:#037bff;}
+    .goTop {display:block;position:fixed;bottom:0;width:100%;padding:10px 0;text-align:center;color:#000;background-color:#EDEDED;}
+    .tr.off,
+    p.off {background-color:#B1B3B9;color:#7B7D86;}
+    .done li {margin-bottom:5px;line-height:1.4;}
+    .done li:last-child {margin-bottom:0;}
+    .blind {position:absolute;width:1px;height:1px;margin:-1px;clip:rect(0, 0, 0, 0);overflow:hidden;}
+  </style>
+</head>
+<body id="top">
+  <div class="header">
+    <h1>
+      <img src="./rms/assets/img/logo/logo.svg" alt="Jeong A Ra 작업리스트">
+    </h1>
+    <p class="date">2025.11.05 [최종완료-반응형적용]</p>
+  </div>
+
+  <div class="tableWrap">
+    <table class="tableTh">
+      <colgroup>
+        <col width="10%" />
+        <col width="10%" />
+        <col width="10%" />
+        <col width="10%" />
+        <col width="25%" />
+        <col width="*" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th>1depth</th>
+          <th>2depth</th>
+          <th>3depth</th>
+          <th>4depth</th>
+          <th>파일명</th>
+          <th><span>비고</span></th>
+        </tr>
+      </thead>
+    </table>
+
+    <table class="tableTd">
+      <colgroup>
+        <col width="10%" />
+        <col width="10%" />
+        <col width="10%" />
+        <col width="10%" />
+        <col width="25%" />
+        <col width="*" />
+      </colgroup>
+      <tbody>
+        <tr>
+          <td class="depth1">로그인</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="./rms/html/login.html" target="_blank">login.html</a></td>
+          <td>
+            <ul class="done">
+              <li></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="depth1">로딩</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="./rms/html/loading.html" target="_blank">loading.html</a></td>
+          <td>
+            <ul class="done">
+              <li></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="depth1">검색</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="./rms/html/search.html" target="_blank">search.html</a></td>
+          <td>
+            <ul class="done">
+              <li></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="depth1"></td>
+          <td>찾는문서가 없을때</td>
+          <td></td>
+          <td></td>
+          <td><a href="./rms/html/search_nopost.html" target="_blank">search_nopost.html</a></td>
+          <td>
+            <ul class="done">
+              <li></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="depth1"></td>
+          <td>결과</td>
+          <td></td>
+          <td></td>
+          <td><a href="./rms/html/result.html" target="_blank">result.html</a></td>
+          <td>
+            <ul class="done">
+              <li></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="depth1"></td>
+          <td></td>
+          <td>활성화</td>
+          <td></td>
+          <td><a href="./rms/html/result_active.html" target="_blank">result_active.html</a></td>
+          <td>
+            <ul class="done">
+              <li>'권한 : 부서열람'일 경우 다운로드 버튼제거 → 퍼블적용</li>
+              <li>더보기 버튼 없는 경우 '더 이상 없습니다.'문구 노출 → 퍼블적용</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <a href="#top" class="goTop">TOP</a>
+</body>
+</html>

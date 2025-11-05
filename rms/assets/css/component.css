@@ -1,0 +1,47 @@
+@charset "UTF-8";
+/**
+ * Jeong A Ra CSS
+ * http://jeongara.com/
+ *
+ * Component CSS
+ */
+
+/* ================================
+  form
+================================= */
+.lbl {}
+.int {display:grid;width:100%;height:70px;padding:0px 24px;border-radius:8px;border:1px solid #58616A;font-size:19px;color:var(--color-title);line-height:22px;}
+.int::placeholder {color:var(--color-placeholder);}
+.int:focus {outline:none;border-color:var(--color-title);color:var(--color-focus);}
+button {background-color:transparent;border:none;cursor:pointer;transition:all .2s ease-in-out;}
+@media screen and (max-width:1024px) {
+  .int {height:55px;}
+}
+@media screen and (max-width:767px) {
+  .int {height:48px;padding:0px 16px;font-size:16px;}
+}
+
+/* 중요(!) 메시지 */
+.form-message-bu {position:relative;margin-top:16px;padding:4.5px 0px 4.5px 32px;font-size:15px;color:var(--color-text);line-height:100%;}
+.form-message-bu::before {content:'';position:absolute;top:-2px;left:0px;width:var(--size-icon);height:var(--size-icon);background-repeat:no-repeat;background-position:center;background-image:url(../img/icon/ico_bu.svg);}
+br.mo-block {display:none;}
+@media screen and (max-width:480px) {
+  br.mo-block {display:block;}
+}
+
+/* 버튼 */
+.btn-submit {width:100%;height:70px;background-color:var(--color-primary);border:none;border-radius:12px;font-weight:700;font-size:19px;color:var(--color-white);}
+.btn-submit:hover:not(:disabled) {background-color:var(--color-primary-hover);}
+.btn-submit:active:not(:disabled) {background-color:var(--color-primary-active);}
+.btn-submit:disabled {background-color:#8A949E;}
+@media screen and (max-width:1024px) {
+  .btn-submit {height:55px;border-radius:8px;}
+}
+@media screen and (max-width:767px) {
+  .btn-submit {height:48px;}
+}
+
+/* ================================
+  아이콘
+================================= */
+i.icon {display:flex;width:var(--size-icon);height:var(--size-icon);}
