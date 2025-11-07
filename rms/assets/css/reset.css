@@ -44,4 +44,4 @@ a {color:inherit;text-decoration:none;}
 strong {font-weight:700;}
 b {font-weight:900;}
 table {border-collapse:collapse;}
-.blind {position:absolute;width:1px;height:1px;clip:rect(0 0 0 0);overflow:hidden;white-space:nowrap;}
+.blind {overflow:hidden;position:absolute;width:1px;height:1px;clip:rect(0 0 0 0);clip-path:inset(50%);border:0;overflow:hidden;white-space:nowrap;}

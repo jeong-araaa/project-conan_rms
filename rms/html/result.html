@@ -145,6 +145,7 @@
               </button><!-- //document-item__button -->
             </article><!-- //document__inner -->
           </div>
+          <div class="document__resizer" tabindex="0"><!-- 드래그영역 --></div>
           <div class="document__preview">
             <div class="preview-item">
               <div class="preview-item__viewer markdown-viewer">
@@ -180,29 +181,134 @@
       </section><!-- //content -->
       <div class="search__bar">
         <form class="search__form" id="searchForm" action="">
-          <div class="search__group">
-            <label for="int-search" class="blind">검색어입력</label>
-            <textarea name="search__input" class="int search__input" id="int-search" placeholder="찾을 문서의 제목이나 내용을 편하게 입력"></textarea>
-            <div class="search__buttons">
-              <button type="button" class="search__btn search__btn--delete">
-                <i class="icon">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="8" cy="8" r="8" fill="#1D1D1D"/>
-                    <path d="M11 5L5 11M11 11L5 5" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                  </svg>
-                </i>
-                <span class="blind">삭제</span>
-              </button>
-              <button type="button" class="search__btn search__btn--search">
-                <i class="icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M21.0703 2.92958L10.4063 13.5935M3.271 8.23526L19.8769 2.47403C20.8995 2.11924 21.8807 3.10037 21.5259 4.123L15.7646 20.7289C15.37 21.8665 13.7725 21.8977 13.3337 20.7764L10.6968 14.0376C10.5651 13.7011 10.2988 13.4348 9.96226 13.3031L3.22354 10.6662C2.10219 10.2274 2.13338 8.62994 3.271 8.23526Z" stroke="#8A949E" stroke-width="2" stroke-linecap="round"/>
-                  </svg>
-                </i>
-                <span class="blind">검색</span>
-              </button>
+          <fieldset class="search__section search__section--default">
+            <legend class="blind">일반검색</legend>
+            <div class="search__group">
+              <label for="int-search" class="blind">검색어입력</label>
+              <button type="button" class="search__btn search__btn--filter">고급<br>검색</button>
+              <textarea name="search__input" class="int search__input" id="int-search" placeholder="찾을 문서의 제목이나 내용을 편하게 입력"></textarea>
+              <div class="search__buttons">
+                <button type="button" class="search__btn search__btn--delete">
+                  <i class="icon">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="8" cy="8" r="8" fill="#1D1D1D"/>
+                      <path d="M11 5L5 11M11 11L5 5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                  </i>
+                  <span class="blind">삭제</span>
+                </button>
+                <button type="button" class="search__btn search__btn--search">
+                  <i class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path d="M21.0703 2.92958L10.4063 13.5935M3.271 8.23526L19.8769 2.47403C20.8995 2.11924 21.8807 3.10037 21.5259 4.123L15.7646 20.7289C15.37 21.8665 13.7725 21.8977 13.3337 20.7764L10.6968 14.0376C10.5651 13.7011 10.2988 13.4348 9.96226 13.3031L3.22354 10.6662C2.10219 10.2274 2.13338 8.62994 3.271 8.23526Z" stroke="#8A949E" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                  </i>
+                  <span class="blind">검색</span>
+                </button>
+              </div>
             </div>
-          </div>
+          </fieldset>
+          <fieldset class="search__section search__section--filter">
+            <legend class="blind">고급검색</legend>
+            <h4>다음 기준으로 결과 좁히기</h4>
+            <div class="search__group">
+              <div class="filter__col">
+                <div class="form-col">
+                  <label for="title" class="lbl">제목</label>
+                  <div class="form-int">
+                    <input type="text" class="int int-sm" id="title">
+                  </div><!-- //form-int -->
+                </div>
+                <div class="form-col">
+                  <label for="writer" class="lbl">기안자</label>
+                  <div class="form-int">
+                    <input type="text" class="int int-sm" id="writer">
+                  </div><!-- //form-int -->
+                </div>
+                <div class="form-col">
+                  <label for="date-start" class="lbl">생성일자</label>
+                  <div class="form-int">
+                    <div class="form-period">
+                      <button type="button" class="btn-date" id="btn-date-start" data-target="date-start">연도. 월. 일</button>
+                      <label for="date-start" hidden>시작일</label>
+                      <input type="date" name="date-start" id="date-start" class="blind">
+
+                      <span class="hyphen"></span>
+
+                      <button type="button" class="btn-date" id="btn-date-end" data-target="date-end">연도. 월. 일</button>
+                      <label for="date-end" hidden>종료일</label>
+                      <input type="date" name="date-end" id="date-end" class="blind">
+                    </div>
+                  </div><!-- //form-int -->
+                </div>
+              </div>
+              <div class="filter__col">
+                <div class="form-col">
+                  <label for="policy-no" class="lbl">방침번호</label>
+                  <div class="form-int">
+                    <input type="text" class="int int-sm" id="policy-no">
+                  </div><!-- //form-int -->
+                </div>
+                <div class="form-col">
+                  <label for="doc-no" class="lbl">문서번호</label>
+                  <div class="form-int">
+                    <input type="text" class="int int-sm" id="doc-no">
+                  </div><!-- //form-int -->
+                </div>
+                <div class="form-col">
+                  <label for="dept" class="lbl">부서명</label>
+                  <div class="form-int">
+                    <input type="text" class="int int-sm" id="dept">
+                  </div><!-- //form-int -->
+                </div>
+              </div>
+              <div class="filter__col filter__md">
+                <div class="form-col">
+                  <label for="auth" class="lbl">권한</label>
+                  <div class="form-int">
+                    <div class="form-dropdown">
+                      <button type="button" class="btn-dropdown" id="auth">전체</button>
+                      <div class="dropdown__box">
+                        <ul>
+                          <li><button type="button" class="btn-select">공개</button></li>
+                          <li><button type="button" class="btn-select">부분공개</button></li>
+                          <li><button type="button" class="btn-select">비공개</button></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div><!-- //form-int -->
+                </div>
+                <div class="form-col">
+                  <label for="expose" class="lbl">외부공개<br>가능여부</label>
+                  <div class="form-int">
+                    <div class="form-dropdown">
+                      <button type="button" class="btn-dropdown" id="expose">전체</button>
+                      <div class="dropdown__box">
+                        <ul>
+                          <li><button type="button" class="btn-select">전자문서시스템</button></li>
+                          <li><button type="button" class="btn-select">통합결재시스템</button></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div><!-- //form-int -->
+                </div>
+                <div class="form-col form-system">
+                  <label for="system" class="lbl">시스템 구분</label>
+                  <div class="form-int">
+                    <div class="form-dropdown">
+                      <button type="button" class="btn-dropdown" id="system">전체</button>
+                      <div class="dropdown__box">
+                        <ul>
+                          <li><button type="button" class="btn-select">부서열람</button></li>
+                          <li><button type="button" class="btn-select">전체열람</button></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div><!-- //form-int -->
+                </div>
+              </div>
+            </div>
+          </fieldset>
         </form>
         <p class="search__message">RMS 시범 서비스 <span>(답변이 사실이 아닐 수도 있으므로 사용 전 사실 확인을 권장합니다.)</span></p>
       </div><!-- //search__bar -->
