@@ -45,7 +45,6 @@
 /* ================================
   search
 ================================= */
-#container.search.is-expanded {padding-bottom:357px;}
 .content .search__form {max-width:800px;margin:0 auto;padding-top:130px;}
 /* 검색바 */
 .search__bar {position:sticky;left:0;right:0;bottom:0;height:var(--searchbar-h);padding:32px 60px;background-color:var(--color-bg2);border-top:1px solid var(--color-primary);z-index:100;}
@@ -53,12 +52,10 @@
 .search__group {display:flex;align-items:center;column-gap:8px;position:relative;}
 @media screen and (max-width:1200px) {
   .content {padding:0px;}
-  #container.search.is-expanded {padding-bottom:325px;}
   .search__bar {padding:24px;}
 }
 @media screen and (max-width:1023px) {
   .search__group {row-gap:20px;margin-bottom:10px;}
-  #container.search.is-expanded {padding-bottom:624.5px;}
 }
 @media screen and (max-width:848px) {
   .content .search__form {padding-left:24px;padding-right:24px;}
@@ -69,7 +66,7 @@
   .search__bar {padding:16px 24px;}
 }
 @media screen and (max-height:620px) {
-  .search__bar.is-open {overflow-y:auto;height:100%;}
+  .search__bar.is-open {position:fixed;top:0;left:0;overflow-y:auto;height:100%;}
 }
 /* 폼 */
 .search__input {overflow:hidden;height:56px;padding:14px 90px 14px 24px;line-height:150%;resize:none;}
