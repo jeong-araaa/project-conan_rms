@@ -20,3 +20,19 @@ forms.forEach((form) => {
   updateState();
   setTimeout(updateState, 100); // 일부 브라우저 자동완성 지연 대응
 });
+
+
+// 키보드 스크립트 추가
+document.addEventListener('keydown', (e) => {
+  const active = document.activeElement;
+
+  if (active && active.tagName === 'INPUT' && e.key === 'Enter') {
+    const form = active.form;
+    if (!form) return;
+
+    if (form.checkValidity()) {
+      e.preventDefault();
+      form.requestSubmit();
+    }
+  }
+});

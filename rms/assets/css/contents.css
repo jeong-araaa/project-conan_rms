@@ -180,8 +180,9 @@
 .infos-list > li {position:relative;padding-left:26px;}
 .infos-list > li::before {content:'';position:absolute;top:10px;left:11px;width:3.5px;height:3.5px;background-color:var(--color-desc);border-radius:4px;}
 .document-item__button {display:flex;align-items:center;column-gap:8px;position:absolute;top:17px;right:24px;width:123px;height:48px;padding:0px 16px;background-color:var(--color-primary);border-radius:8px;font-weight:700;font-size:17px;color:var(--color-white);}
-.document-item__button:hover {background-color:var(--color-primary-hover);}
-.document-item__button:active {background-color:var(--color-primary-active);}
+.document-item__button:hover:not(:disabled) {background-color:var(--color-primary-hover);}
+.document-item__button:active:not(:disabled) {background-color:var(--color-primary-active);}
+.document-item__button:disabled {background-color:#8A949E;cursor:default !important;}
 @media screen and (max-width:1600px) {
   .document-item__infos {margin-left:0px;}
   .document-item__button {height:43px;}
@@ -205,6 +206,7 @@
 /* 문서 미리보기 */
 .document__preview {flex:1 1 auto;min-width:310px;position:sticky;align-self:start;top:calc(var(--header-h));align-self:start;padding:16px 0 16px 10px;}
 .preview-item {overflow:auto;width:100%;height:100%;border:1px solid #CCC;background:#fff;}
+.preview-item::before {content:'파일 내용 미리보기';display:block;position:sticky;top:0;padding:4px;background-color:var(--color-white);border-bottom:1px solid #ccc;font-size:13px;color:#555;text-align:center;}
 .preview-item__file {position:absolute;top:-1px;left:-1px;width:101%;height:101%;}
 .preview-item__file img {position:absolute;top:0;left:0;width:100%;height:100%;}
 .preview-item__nopost {display:flex;align-items:center;justify-content:center;height:100%;font-weight:600;font-size:16px;color:var(--color-placeholder);text-align:center;line-height:150%;}
