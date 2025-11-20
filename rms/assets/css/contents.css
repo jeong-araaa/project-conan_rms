@@ -141,6 +141,9 @@
   .no-post {font-size:17px;}
   
 }
+.search__result {padding-top:20px;}
+.search__result > ul {list-style:none;}
+.search__result > ul > li {margin:15px 0px;}
 
 
 
