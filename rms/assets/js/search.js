@@ -45,6 +45,7 @@ function initDocumentList() {
 // ------------------------------------------------------
 // 3) 우측 미리보기 높이 제어 (좌측 컨텐츠 높이에 맞춤)
 // ------------------------------------------------------
+/*
 function initPreviewHeight() {
   const leftList = document.querySelector('.document-item');
   const previewItem = document.querySelector('.document__preview');
@@ -87,6 +88,7 @@ function initPreviewHeight() {
   if (document.fonts) document.fonts.ready.then(applyPreviewHeight);
   applyPreviewHeight();
 }
+  */
 
 
 // ------------------------------------------------------
@@ -335,7 +337,7 @@ function initFormDropdowns(){
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".search__group").forEach(initSearchGroup);
   initDocumentList();
-  initPreviewHeight();
+  // initPreviewHeight();
   initDocumentSplitter();
   initFilterToggle();
   initDateButtons();
